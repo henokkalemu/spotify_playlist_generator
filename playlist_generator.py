@@ -4,10 +4,10 @@ from spotify_api_caller import sp
 
 # helper method to create and populate playlist
 def create_playlist(user_id, playlist_name, track_ids):
-    # Create a new playlist
+
     new_playlist = sp.user_playlist_create(user_id, playlist_name)
 
-    # Add tracks to the playlist
+    #
     sp.user_playlist_add_tracks(user_id, new_playlist['id'], track_ids)
     
 

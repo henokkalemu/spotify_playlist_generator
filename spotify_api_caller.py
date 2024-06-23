@@ -1,14 +1,14 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-
-
+import os
+from dotenv import load_dotenv
 
 # API CREDENTIALS
-CLIENT_ID = 'e1a98ce2bba745f1b4d7a3af5c8d3b27'
-CLIENT_SECRET = "6a62ef246dc54335a44578adfaf92db4"
-REDIRECT_URI = 'http://localhost:8888/callback'
-scope = 'user-library-read user-read-private playlist-modify-public'
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+REDIRECT_URI = os.getenv('REDIRECT_URI')
 
+scope= 'user-library-read user-read-private playlist-modify-public'
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     client_id=CLIENT_ID,
